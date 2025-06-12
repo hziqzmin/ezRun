@@ -1,0 +1,19 @@
+{{>layouts/header}}
+<link rel="stylesheet" href="../css/home.css">
+<div class="pr-table">
+    {{#prTimes}}
+        <div class="pr-entry">
+            <div class="distance">{{distance}}</div>
+            <div class="time">{{time}}</div>
+        </div>
+    {{/prTimes}}
+</div>
+
+<div class="quote-div">
+    <h1 class="quote-text">{{randomQuote}}</h1>
+    <!--<form action="/" method="get">
+        <button type="submit" class="quote-btn">확인</button>
+    </form>-->
+</div>
+
+{{>layouts/footer}}

@@ -1,0 +1,27 @@
+{{>layouts/header}}
+<link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <div class="logo"><img class="nav-logo" src="/images/ezRun logo.png" alt="ezRun logo"></div>
+        <div class="nav-links">
+            <span>WEEKLY TRAINING PLAN</span>
+            <span>RUN LOG</span>
+            <span>RACE CALENDAR</span>
+            <span>PR TRACKER</span>
+        </div>
+        <div class="menu-icon">≡</div>
+    </div>
+
+    <div class="pr-table">
+        {{#prTimes}}
+            <div class="pr-entry">
+                <div class="distance">{{distance}}</div>
+                <div class="time">{{time}}</div>
+            </div>
+        {{/prTimes}}
+    </div>
+</div>
+
+{{>layouts/footer}}
