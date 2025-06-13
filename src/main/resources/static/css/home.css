@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fefadf;
+    margin: 0;
+    padding: 0;
+}
+.pb-container {
+    min-height: 80px;
+    display: flex;
+    background-color: #a9dad8;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+.pb-entry {
+    min-width: 180px;
+    text-align: center;
+    padding: 10px 20px;
+}
+.category {
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    -webkit-text-stroke: 1px #096B68; /* Outline color */
+    color: #FEFEFE;
+}
+.timing {
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 5px;
+    color: #FEFEFE;
+    text-shadow: 3px 3px 6px #096B68;
+}
+.greeting{
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    color: #096B68;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.quote-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers items horizontally */
+    justify-content: center; /* optional: centers items vertically if container has height */
+    text-align: center;
+}
+.quote-text{
+    max-width: 60%;
+    color: #096B68;
+    margin: 60px;
+    /*font-family: "DejaVu Sans Mono, monospace", serif ;*/
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 28px;
+    font-style: italic;
+}
+.quote-btn{
+    border-radius: 30px;
+    padding: 15px;
+    color: #FFFBDE;
+    background-color: #096B68;
+}

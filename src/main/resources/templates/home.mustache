@@ -1,0 +1,18 @@
+{{>layouts/header}}
+<link rel="stylesheet" href="../css/home.css">
+<div class="pb-container">
+    {{#pbTracker}}
+        <div class="pb-entry">
+            <div class="category">{{category}}</div>
+            <div class="timing">{{timing}}</div>
+        </div>
+    {{/pbTracker}}
+</div>
+<div class="content-container">
+    <h1 class="greeting">Welcome back, {{userName}}!</h1>
+</div>
+<div class="quote-container">
+    <h1 class="quote-text">{{randomQuote}}</h1>
+</div>
+
+{{>layouts/footer}}

@@ -1,0 +1,21 @@
+{{>layouts/header}}
+<link rel="stylesheet" href="../css/pbTracker.css">
+<div class="container-main">
+    <div class="title">PB TRACKER</div>
+    <div class="pb-container">
+        {{#pbTracker}}
+        <div class="pb-horizontal-container">
+            {{#this}}
+            <div class="pb-entry">
+                <div class="category">{{category}}</div>
+                <div class="timing">{{timing}}</div>
+            </div>
+            {{/this}}
+        </div>
+        {{/pbTracker}}
+        <div class="button-container">
+            <button class="edit-timing-btn" onclick="window.location.href='/pbTracker/edit'">EDIT TIMING</button>
+        </div>
+    </div>
+</div>
+{{>layouts/footer}}
