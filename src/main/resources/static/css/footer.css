@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
 html, body {
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: bold;
     height: 100%;
     margin: 0;
     display: flex;
@@ -16,6 +19,8 @@ footer{
     flex-wrap: wrap;
 }
 .copyright{
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: bold;
     margin: 20px;
     text-align: center;
     font-size: 14px;
@@ -29,10 +34,11 @@ footer{
     margin-right: 30px;
     color: #FFFBDE;
     text-decoration: none;
+    transition: text-shadow 0.3s ease;
 }
 
 .link a:hover {
     text-decoration: transparent;
     color: #FFFBDE;
-    text-shadow: 4px 4px 3px #096B68;
+    text-shadow: 6px 6px 3px #096B68;
 }

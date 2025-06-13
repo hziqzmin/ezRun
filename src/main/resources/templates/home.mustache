@@ -1,19 +1,18 @@
 {{>layouts/header}}
 <link rel="stylesheet" href="../css/home.css">
-<div class="pr-table">
-    {{#prTimes}}
-        <div class="pr-entry">
-            <div class="distance">{{distance}}</div>
-            <div class="time">{{time}}</div>
+<div class="pb-container">
+    {{#pbTracker}}
+        <div class="pb-entry">
+            <div class="category">{{category}}</div>
+            <div class="timing">{{timing}}</div>
         </div>
-    {{/prTimes}}
+    {{/pbTracker}}
 </div>
-
-<div class="quote-div">
+<div class="content-container">
+    <h1 class="greeting">Welcome back, {{userName}}!</h1>
+</div>
+<div class="quote-container">
     <h1 class="quote-text">{{randomQuote}}</h1>
-    <!--<form action="/" method="get">
-        <button type="submit" class="quote-btn">확인</button>
-    </form>-->
 </div>
 
 {{>layouts/footer}}
