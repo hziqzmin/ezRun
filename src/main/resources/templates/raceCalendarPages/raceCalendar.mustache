@@ -1,0 +1,68 @@
+{{>layouts/header}}
+<link rel="stylesheet" href="../css/raceCalendar.css">
+<link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
+<div class="container-main">
+    <h1 class="title">RACE CALENDAR</h1>
+    <div id='calendar'></div>
+
+    <!-- Event Form Modal (Simple Prompt Alternative) -->
+    <div id="eventForm" style="display:none;">
+        <input type="text" id="race_event" placeholder="Race Name" />
+        <input type="text" id="location" placeholder="Location" />
+        <select id="category">
+            <option value="5K">5K</option>
+            <option value="10K">10K</option>
+            <option value="Half">Half</option>
+            <option value="Full">Full</option>
+        </select>
+        <label>
+            Virtual?
+            <input type="checkbox" id="is_virtual" />
+        </label>
+        <textarea id="notes" placeholder="Notes"></textarea>
+        <button onclick="saveEvent()">Save</button>
+    </div>
+
+    <script>
+        let selectedDate;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const calendarEl = document.getElementById('calendar');
+
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                selectable: true,
+                events: '/api/events',
+                select: function (info) {
+                    selectedDate = info.startStr;
+                    document.getElementById("eventForm").style.display = 'block';
+                }
+            });
+
+            calendar.render();
+
+            window.saveEvent = function () {
+                const data = {
+                    race_event: document.getElementById("race_event").value,
+                    race_date: selectedDate,
+                    location: document.getElementById("location").value,
+                    category: document.getElementById("category").value,
+                    is_virtual: document.getElementById("is_virtual").checked,
+                    notes: document.getElementById("notes").value,
+                    user_id: 123456789 // Hardcoded for now, can later bind to session
+                };
+
+                fetch('/api/events', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                }).then(() => {
+                    document.getElementById("eventForm").style.display = 'none';
+                    calendar.refetchEvents();
+                });
+            }
+        });
+    </script>
+</div>
+{{>layouts/footer}}

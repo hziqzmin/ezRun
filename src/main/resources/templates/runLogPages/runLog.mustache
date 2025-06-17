@@ -1,0 +1,46 @@
+{{>layouts/header}}
+<link rel="stylesheet" href="../css/runLog.css">
+<div class="container-main">
+    <div class="title">RUN LOG</div>
+    <div class="log-container-first">
+        <div class="log-content">
+            <table class="log-table">
+                <thead class="table-header">
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Date <br>(YYYY-MM-DD)</th>
+                        <th scope="col">Distance (km)</th>
+                        <th scope="col">Duration (min)</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Avg HR (bpm)</th>
+                        <th scope="col">Avg Pace (min/km)</th>
+                        <th scope="col">Notes</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                {{#runLogList}}
+                    <tr>
+                        <th>{{no}}</th>
+                        <td><a href="/runLog/{{log.log_id}}">{{log.run_title}}</a></td>
+                        <td>{{log.run_date}}</td>
+                        <td>{{log.run_distance}}</td>
+                        <td>{{log.run_duration}}</td>
+                        <td>{{log.run_type}}</td>
+                        <td>{{log.avg_hr}}</td>
+                        <td>{{log.avg_pace}}</td>
+                        <td>{{log.notes}}</td>
+                        <td><button class="delete-btn" onclick="window.location.href='/runLog/{{log.log_id}}/delete'">x</button></td>
+                    </tr>
+                {{/runLogList}}
+                </tbody>
+            </table>
+        </div>
+        <div class="button-container">
+            <!--<button class="edit-run-btn" onclick="window.location.href='/runLog/edit'">EDIT RUN</button>-->
+            <button class="add-run-btn" onclick="window.location.href='/runLog/add'">ADD RUN</button>
+        </div>
+    </div>
+</div>
+{{>layouts/footer}}

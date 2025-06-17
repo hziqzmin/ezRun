@@ -63,3 +63,26 @@ html, body {
     color: #FFFBDE;
     text-shadow: 6px 6px 3px #096B68;
 }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #FFFBDE;
+    min-width: 120px;
+    box-shadow: 0 8px 16px #096B68;
+    z-index: 1;
+    margin-right: 0.5em;
+    border-radius: 20px;
+}
+.dropdown-content a {
+    padding: 10px 16px;
+    display: block;
+    color: #096B68;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    color: #FFFBDE;
+    background-color: #90D1CA;
+    border-radius: 20px;
+}

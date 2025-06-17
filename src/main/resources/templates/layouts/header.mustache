@@ -13,39 +13,45 @@
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="container">
-        <a class="logo" href="/"><img class="nav-logo" src="/images/ezRunLogo.png" alt="ezRun logo"></a>
-        <div class="nav-div">
-            <ul class="nav-items-list">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/weeklyTrainingPlan">WEEKLY TRAINING PLAN</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/runLog">RUN LOG</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/raceCalendar">RACE CALENDAR</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/pbTracker">PB TRACKER</a>
-                </li>
-            </ul>
+    <nav class="navbar">
+        <div class="container">
+            <a class="logo" href="/"><img class="nav-logo" src="/images/ezRunLogo.png" alt="ezRun logo"></a>
+            <div class="nav-div">
+                <ul class="nav-items-list">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/weeklyTrainingPlan">WEEKLY TRAINING PLAN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/runLog">RUN LOG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/raceCalendar">RACE CALENDAR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/pbTracker">PB TRACKER</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-icon" onclick="toggleDropdown()">
+                <a href="javascript:void(0)">≡</a></div>
+            <div id="dropdownMenu" class="dropdown-content">
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            </div>
         </div>
-        <div class="menu-icon"><a href="/">≡</a></div>
-    </div>
-</nav>
+    </nav>
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById("dropdownMenu");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
 
-<!--<div class="container">
-    <header class="navbar">
-        <div class="logo"><img class="nav-logo" src="/images/ezRunLogo.png" alt="ezRun logo"></div>
-        <div class="nav-links">
-            <span><a href="#">WEEKLY TRAINING PLAN</a></span>
-            <span><a href="#">RUN LOG</a></span>
-            <span><a href="#">RACE CALENDAR</a></span>
-            <span><a href="#">PR TRACKER</a></span>
-        </div>
-        <div class="menu-icon">≡</div>
-    </header>
-</div>-->
+        // Optional: hide dropdown when clicking outside
+        window.addEventListener('click', function(e) {
+            const dropdown = document.getElementById("dropdownMenu");
+            if (!e.target.closest('.menu-icon')) {
+                dropdown.style.display = "none";
+            }
+        });
+    </script>
 <main>

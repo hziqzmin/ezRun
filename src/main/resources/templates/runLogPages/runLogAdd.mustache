@@ -1,0 +1,54 @@
+{{>layouts/header}}
+<link rel="stylesheet" href="../css/runLog.css">
+<div class="container-main">
+    <div class="title">RUN LOG</div>
+    <form action="/runLog/createLog" method="post">
+        <div class="log-container">
+            <div class="log-content">
+                <table class="log-table">
+                    <thead class="table-header">
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Date (YYYY-MM-DD)</th>
+                        <th scope="col">Distance (km)</th>
+                        <th scope="col">Duration (min)</th>
+
+                    </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr>
+                            <td><input type="text" name="run_title" class="log-details" placeholder="Enter Run Title" required></td>
+                            <td><input type="text" name="run_date" class="log-details" placeholder="Enter Run Date" required></td>
+                            <td><input type="text" name="run_distance" class="log-details" placeholder="Enter Run Distance" required></td>
+                            <td><input type="text" name="run_duration" class="log-details" placeholder="Enter Run Duration" required></td>
+
+                        </tr>
+                    </tbody>
+                    <thead class="table-header">
+                    <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col">Avg HR (bpm)</th>
+                        <th scope="col">Avg Pace (min/km)</th>
+                        <th scope="col">Notes ('-' if no note)</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr>
+                            <td><input type="text" name="run_type" class="log-details" placeholder="Enter Run Type" required></td>
+                            <td><input type="text" name="avg_hr" class="log-details" placeholder="Enter Avg. HR" required></td>
+                            <td><input type="text" name="avg_pace" class="log-details" placeholder="Enter Avg. Pace" required></td>
+                            <td><input type="text" name="notes" class="log-details" placeholder="Enter Notes" required></td>
+                            <input type="hidden" name="user_id" class="log-details"value="123456789">
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="button-container">
+                <!--<button class="edit-run-btn" onclick="window.location.href='/runLog/edit'">EDIT RUN</button>-->
+                <button class="cancel-run-btn" type="button" onclick="window.location.href='/runLog'">CANCEL</button>
+                <button class="add-run-btn" type="submit">ADD RUN</button>
+            </div>
+        </div>
+    </form>
+</div>
+{{>layouts/footer}}

@@ -43,11 +43,15 @@ public class PbTrackerController {
 
     @PostMapping("/pbTracker/update")
     public String updateTiming(@RequestParam("idList") List<Integer> idList,
-                               @RequestParam("timingList") List<String> timingList) {
+                                @RequestParam("timingList") List<String> timingList,
+                                @RequestParam("raceEventList") List<String> raceEventList,
+                                @RequestParam("raceDateList") List<String> raceDateList) {
         for (int i = 0; i < idList.size(); i++) {
             PbTracker pb = pbTrackerRepository.findById(idList.get(i)).orElse(null);
             if (pb != null) {
                 pb.setTiming(timingList.get(i));  // stores "HH:mm:ss"
+                pb.setRace_event(raceEventList.get(i));
+                pb.setRace_date(raceDateList.get(i));
                 pbTrackerRepository.save(pb);
             }
         }

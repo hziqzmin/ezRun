@@ -9,8 +9,10 @@
                     {{#this}}
                         <div class="pb-entry">
                             <div class="category">{{category}}</div>
-                            <input type="text" name="timingList" class="timing" value="{{timing}}" pattern="^\d{2}:\d{2}:\d{2}$" required>
-                            <input type="hidden" name="idList" value="{{id}}">
+                            <input type="text" name="timingList" class="pb-details" placeholder="Enter Timing" value="{{timing}}" pattern="^\d{2}:\d{2}:\d{2}$" required>
+                            <input type="text" name="raceEventList" class="pb-details" placeholder="Enter Race Event" value="{{race_event}}">
+                            <input type="text" name="raceDateList" class="pb-details" placeholder="Enter Race Date" value="{{race_date}}">
+                            <input type="hidden" name="idList" value="{{pb_id}}">
                         </div>
                     {{/this}}
                 </div>

@@ -3,6 +3,8 @@ package com.dongyang.ezRun.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.sql.Timestamp;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -13,7 +15,9 @@ import lombok.*;
 public class PbTracker {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Integer pb_id;
+    @Column
+    private Long user_id;
     @Column
     private String category;
     @Column
@@ -22,6 +26,10 @@ public class PbTracker {
     private String race_event;
     @Column
     private String race_date;
+    @Column
+    private Timestamp created_at;
+    @Column
+    private Timestamp updated_at;
 
     public void pbDetails(PbTracker pbtracker){
         if(pbtracker.category != null){
@@ -35,6 +43,12 @@ public class PbTracker {
         }
         if (pbtracker.race_date != null) {
             this.race_date = pbtracker.race_date;
+        }
+        if(pbtracker.created_at != null){
+            this.created_at = pbtracker.created_at;
+        }
+        if(pbtracker.updated_at != null){
+            this.updated_at = pbtracker.updated_at;
         }
     }
 }

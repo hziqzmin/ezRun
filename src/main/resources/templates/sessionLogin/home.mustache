@@ -1,0 +1,33 @@
+{{>layouts/header}}
+<link rel="stylesheet" href="../css/home.css">
+<div class="pb-container">
+    {{#pbTracker}}
+        <div class="pb-entry">
+            <div class="category">{{category}}</div>
+            <div class="timing">{{timing}}</div>
+        </div>
+    {{/pbTracker}}
+</div>
+<!--<div class="content-container">-->
+<!--    <h1 class="greeting">Welcome back, !</h1>-->
+<!--</div>-->
+{{^full_name}}
+    <div>
+        <h3>로그인 되어있지 않습니다!</h3>
+        <a href="/session-login/join">회원 가입</a> <br/><br/>
+        <a href="/session-login/login">로그인</a>
+    </div>
+{{/full_name}}
+{{#full_name}}
+    <div>
+        <h3>{{full_name}}님 환영합니다!</h3>
+        <a href="/session-login/info">유저 정보</a> <br/><br/>
+        <a href="/session-login/admin">관리자 페이지</a> <br/><br/>
+        <a href="/session-login/logout">로그아웃</a>
+    </div>
+{{/full_name}}
+<div class="quote-container">
+    <h1 class="quote-text">{{randomQuote}}</h1>
+</div>
+
+{{>layouts/footer}}

@@ -9,6 +9,6 @@ public class WeeklyTrainingPlanController {
     @GetMapping("/weeklyTrainingPlan")
     public String weeklyTrainingPlan(Model model) {
 
-        return "weeklyTrainingPlan";
+        return "weeklyTrainingPlanPages/weeklyTrainingPlan";
     }
 }

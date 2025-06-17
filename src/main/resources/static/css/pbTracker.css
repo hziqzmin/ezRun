@@ -34,7 +34,6 @@ body {
 .pb-horizontal-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
 }
 
 .pb-entry {
@@ -60,29 +59,32 @@ body {
     margin-bottom: 10px;
 }
 
-.timing {
-    font-size: 1.8rem;
+.pb-details {
+    font-size: 1.3rem;
     font-weight: 700;
     color: #FEFEFE;
     background-color: #90D1CA;
+    min-height: 28px;
     border-radius: 20px;
-    padding: 10px 0 10px 0;
+    padding: 8px 0 8px 0;
+    margin: 0.1em;
     transition: box-shadow 0.3s ease;
 }
 
-.timing:hover {
+.pb-details:hover {
     box-shadow: 6px 6px 3px #096B68;
 }
 
-input.timing {
+input.pb-details {
     font-family: 'Maven Pro', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #FEFEFE;
     background-color: #90D1CA;
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
+    margin: 0.1em;
     text-align: center;
     width: 100%; /* Optional: ensure full width inside .pb-entry */
     box-sizing: border-box; /* Include padding in width */
@@ -90,7 +92,7 @@ input.timing {
     transition: box-shadow 0.3s ease;
 }
 
-input.timing:hover {
+input.pb-details:hover {
     box-shadow: 6px 6px 3px #096B68;
 }
 
@@ -140,4 +142,10 @@ input.timing:hover {
     .timing {
         font-size: 1.5rem;
     }
+}
+
+::placeholder {
+    color: #FEFEFE;
+    font-size: 1.6rem;
+    opacity: 1; /* Firefox */
 }
