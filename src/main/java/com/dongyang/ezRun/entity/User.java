@@ -19,6 +19,4 @@ public class User {
     private String fullName;
     @Column
     private String password;
-    @Column
-    private UserRole role;
 }
